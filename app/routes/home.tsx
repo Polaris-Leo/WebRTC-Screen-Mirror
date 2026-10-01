@@ -28,7 +28,7 @@ export async function clientLoader() {
 		const id = customAlphabet("0123456789", 6)();
 		setId(id);
 	}
-	const url = `wss://signaling.pexni.com/connect?id=${id}`;
+	const url = `wss://signaling-server.1785517536.workers.dev/connect?id=${id}`;
 	webSocketService.connect(url);
 	webSocketService.registerHandler("offer", (data) => {
 		webRTCService.handleOffer(data.from, data.data);
